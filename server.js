@@ -1,3 +1,4 @@
+const cors = require('cors');
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
@@ -12,7 +13,7 @@ import tasksRouter from './src/routes/tasks.js';
 import commentsRouter from './src/routes/comments.js';
 
 const app = express();
-
+app.use(cors());
 app.use(helmet());
 app.use(cors({ origin: '*'}));
 app.use(express.json());
